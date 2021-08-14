@@ -1,0 +1,248 @@
+stackbitVersion: ~0.3.0
+ssgName: gatsby
+nodeVersion: '12'
+publishDir: public
+dataDir: src/data
+pagesDir: src/content
+models:
+  basic:
+    type: page
+    label: Basic
+    folder: basic
+    match: '*'
+    fields:
+      - type: string
+        name: path
+        label: Path
+      - type: string
+        name: title
+        label: Title
+      - type: datetime
+        name: date
+        label: Date
+      - type: string
+        name: template
+        label: Template
+  service:
+    type: page
+    label: Service
+    folder: services
+    match: '*'
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: datetime
+        name: date
+        label: Date
+      - type: boolean
+        name: featured
+        label: Featured
+      - type: number
+        name: weight
+        label: Weight
+        subtype: int
+      - type: boolean
+        name: draft
+        label: Draft
+  team:
+    type: page
+    label: Team
+    folder: team
+    match: '*'
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: datetime
+        name: date
+        label: Date
+      - type: boolean
+        name: draft
+        label: Draft
+      - type: image
+        name: image
+        label: Image
+      - type: string
+        name: jobtitle
+        label: Jobtitle
+      - type: string
+        name: linkedinurl
+        label: Linkedinurl
+      - type: number
+        name: weight
+        label: Weight
+        subtype: int
+      - type: boolean
+        name: promoted
+        label: Promoted
+  content:
+    type: page
+    label: Content
+    match: '*'
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: intro_image
+        label: Intro Image
+      - type: boolean
+        name: intro_image_absolute
+        label: Intro Image Absolute
+      - type: boolean
+        name: intro_image_hide_on_mobile
+        label: Intro Image Hide On Mobile
+  config:
+    type: data
+    label: Config
+    file: config/config.json
+    fields:
+      - type: object
+        name: homepage
+        label: Homepage
+        fields:
+          - type: boolean
+            name: show_call_box
+            label: Show Call Box
+      - type: object
+        name: logo
+        label: Logo
+        fields:
+          - type: image
+            name: mobile
+            label: Mobile
+          - type: image
+            name: desktop
+            label: Desktop
+          - type: string
+            name: desktop_height
+            label: Desktop Height
+          - type: string
+            name: alt
+            label: Alt
+      - type: object
+        name: homepage_meta_tags
+        label: Homepage Meta Tags
+        fields:
+          - type: string
+            name: meta_description
+            label: Meta Description
+          - type: string
+            name: meta_og_title
+            label: Meta Og Title
+          - type: string
+            name: meta_og_type
+            label: Meta Og Type
+          - type: string
+            name: meta_og_url
+            label: Meta Og Url
+          - type: image
+            name: meta_og_image
+            label: Meta Og Image
+          - type: string
+            name: meta_og_description
+            label: Meta Og Description
+          - type: string
+            name: meta_twitter_card
+            label: Meta Twitter Card
+          - type: string
+            name: meta_twitter_site
+            label: Meta Twitter Site
+          - type: string
+            name: meta_twitter_creator
+            label: Meta Twitter Creator
+      - type: object
+        name: footer
+        label: Footer
+        fields:
+          - type: string
+            name: copyright_text
+            label: Copyright Text
+          - type: string
+            name: copyright_link
+            label: Copyright Link
+  contact:
+    type: data
+    label: Contact
+    file: contact/contact.json
+    fields:
+      - type: string
+        name: email
+        label: Email
+      - type: string
+        name: phone
+        label: Phone
+      - type: string
+        name: contact_button_link
+        label: Contact Button Link
+  features:
+    type: data
+    label: Features
+    file: features.json
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: title
+          label: Title
+        - type: string
+          name: description
+          label: Description
+        - type: image
+          name: image
+          label: Image
+  footer_menu:
+    type: data
+    label: Footer Menu
+    file: menus/footerMenu.json
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: name
+          label: Name
+        - type: string
+          name: url
+          label: Url
+        - type: number
+          name: weight
+          label: Weight
+          subtype: int
+  main_menu:
+    type: data
+    label: Main Menu
+    file: menus/mainMenu.json
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: name
+          label: Name
+        - type: string
+          name: url
+          label: Url
+        - type: number
+          name: weight
+          label: Weight
+          subtype: int
+  social:
+    type: data
+    label: Social
+    file: social.json
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: name
+          label: Name
+        - type: string
+          name: link
+          label: Link
+        - type: image
+          name: image
+          label: Image
